@@ -2,7 +2,7 @@ class HomeController < ApplicationController
    #dropbox constants  
   APP_KEY = 'frm9p5h8990e888'
   APP_SECRET = '5lnge08bkoauzhi'
-  DROPREDIRECT_URI = 'http://localhost:3000/home/dropauth'
+  DROPREDIRECT_URI = 'https://safeclod.herokuapp.com/home/dropauth'
   require 'dropbox_sdk'
 
 
@@ -89,7 +89,7 @@ def dropauth
             client_id: 'skamrg791rspftegmigusyevx2pup49y',
             client_secret: '6sj2CBbfGU0eFdfJojTxJOu36DtVyKG6'
           })
-          authorize_url = session.authorize_url('http://localhost:3000/home/boxauth')
+          authorize_url = session.authorize_url('https://safeclod.herokuapp.com/home/boxauth')
           redirect_to authorize_url
       else
         
