@@ -247,5 +247,10 @@ def clddownload
   end
 
   def delete
+     file = params[:pa]
+      det =Detail.find_by(filename: file)
+      File.delete(Rails.root.join('filespace', det.filename))
+      det.destroy 
+      redirect_to :controller => "home",:action => 'index'
   end
 end
